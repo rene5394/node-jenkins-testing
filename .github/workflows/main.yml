@@ -14,8 +14,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '14'
-    - name: SonarQube Scan
-      uses: sonarsource/sonarqube-scan-action@master
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@v2.0.2
+      with:
+        projectBaseDir: .
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
